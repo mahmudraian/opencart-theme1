@@ -9,7 +9,7 @@ define('HTTPS_SERVER', 'http://localhost/OpencartThemeDevelopment/');
 define('DIR_APPLICATION', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/catalog/');
 define('DIR_SYSTEM', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/system/');
 define('DIR_IMAGE', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/image/');
-define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
+define('DIR_STORAGE', 'D:/Softwares/laragon/oc_theme_dev_storage/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
