@@ -60,3 +60,55 @@
     color: black;
   }
 
+  .best-head{
+    padding-top: 42px;
+    color:black;
+  }
+
+  .best-sub{
+    margin-bottom: 40px;
+  }
+
+  .cart-button{
+    width: 100%;
+    height: 35px;
+    background-color: #43467f;
+    color:white;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+
+  .view-button{
+    width: 100%;
+    height: 35px;
+    background-color: #ffffff;
+    color:rgb(104, 101, 101);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .wishlist{
+    margin-left: 227px;
+    padding-top: 1px;
+    margin-top: 18px;
+    border-radius: 50%;
+
+  }
+
+ .heart {
+    margin-top: 15px;
+
+  } 
+
+  .pname{
+    color:black !important;
+  }
+
+  .price{
+    color:rgb(37, 41, 240) !important;
+  }
+
+  .card{
+    border-radius: 10px;
+    background-color: white;
+  }
