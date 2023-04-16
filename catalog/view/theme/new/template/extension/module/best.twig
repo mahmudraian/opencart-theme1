@@ -1,0 +1,61 @@
+<h2 style="text-align:center;" class="best-head">{{ heading_title }}</h2>
+<p style="text-align:center;" class="best-sub">{{ sub_title }}</p>
+<div class="row">
+ {% for product in products %}
+  <div class="card product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="card product-thumb transition">
+      <a type="button" class="wishlist" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart heart"></i></a>
+
+      <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+      <div class="caption">
+        <h4><a href="{{ product.href }}"><span style="color:black;">{{ product.name }}</span></a></h4>
+        <p>{{ product.description }}</p>
+        <span>
+             {% if product.rating %}
+        <div class="rating">
+          {% for i in 5 %}
+   
+          <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
+      
+          {% endfor %}
+        </div>
+        {% endif %}
+        </span>
+   
+        {% if product.price %}
+        <p class="price">
+          {% if not product.special %}
+          {{ product.price }}
+          {% else %}
+          <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+          <span>
+
+
+          </span>
+          <span>{{ product.discount }}</span>
+          {% endif %}
+          {% if product.tax %}
+          <span class="price-tax">{{ text_tax }} {{ product.tax }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+        <button class="cart-button" type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+
+        <!-- <button class="view-button">
+          <a href="{{ product.href }}">
+            <i class="fa fa-shopping-eye"></i>
+            <span class="hidden-xs hidden-sm hidden-md">{{ quick_view }}</span>
+          </a>
+        </button> -->
+
+        <a href="{{ product.href }}" class="btn btn-light view-button"> <i class="fa fa-eye"> </i>{{ quick_view }}</a>
+      </div>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
