@@ -112,3 +112,14 @@
     border-radius: 10px;
     background-color: white;
   }
+
+
+  .find-products
+  {
+    height: 140px;
+   padding: 20px;
+  }
+
+  .find-products-title{
+    margin-bottom: 50px;
+  }
