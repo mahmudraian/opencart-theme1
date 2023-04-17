@@ -8,19 +8,11 @@
 
       <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
       <div class="caption">
-        <h4><a href="{{ product.href }}"><span style="color:black;">{{ product.name }}</span></a></h4>
-        <p>{{ product.description }}</p>
-        <span>
-             {% if product.rating %}
-        <div class="rating">
-          {% for i in 5 %}
-   
-          <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
       
-          {% endfor %}
-        </div>
-        {% endif %}
-        </span>
+        <h4><a href="{{ product.href }}"><span style="color:black;">{{ product.name }}</span></a></h4>
+        
+        <p>{{ product.description }}</p>
+     
    
         {% if product.price %}
         <p class="price">
@@ -39,6 +31,17 @@
           {% endif %}
         </p>
         {% endif %}
+        <div>
+
+                {% if product.rating %}
+                <div class="rating"> {% for i in 1..5 %}
+                  {% if product.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>{% endif %}
+                  {% endfor %} 
+                  </div>
+                {% endif %} 
+                </div>
+
+       
         <button class="cart-button" type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
 
         <!-- <button class="view-button">
