@@ -123,3 +123,8 @@
   .find-products-title{
     margin-bottom: 50px;
   }
+
+
+  .shop.swiper-viewport {
+    background-color: #fceae8;
+  }
