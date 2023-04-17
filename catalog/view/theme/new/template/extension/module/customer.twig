@@ -1,0 +1,27 @@
+<h1 style="text-align:center; margin-bottom: 20px;">Customer Stories</h1>
+<p style="text-align:center; margin-bottom: 30px;">Some of our customer testimonials goes to here</p> 
+
+<div class="customer swiper-viewport">
+  <div id="customer{{ module }}" class="swiper-container">
+    <div class="swiper-wrapper">{% for banner in banners %}
+      <div class="swiper-slide text-center">{% if banner.link %}<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% else %}<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}</div>
+      {% endfor %}</div>
+  </div>
+  <div class="swiper-pagination customer{{ module }}"></div>
+  <div class="swiper-pager">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#customer{{ module }}').swiper({
+	mode: 'horizontal',
+	slidesPerView: 5,
+	pagination: '.customer{{ module }}',
+	paginationClickable: true,
+	nextButton: '.customer .swiper-button-next',
+    prevButton: '.customer .swiper-button-prev',
+	autoplay: 2500,
+	loop: true
+});
+--></script>

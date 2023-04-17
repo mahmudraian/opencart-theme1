@@ -312,7 +312,7 @@ div.required .control-label:before {
 #content {
 	min-height: 600px;
 }
-/* footer */
+/* footer
 footer {
 	margin-top: 30px;
 	padding-top: 30px;
@@ -335,7 +335,47 @@ footer h5 {
 	font-size: 13px;
 	font-weight: bold;
 	color: #fff;
+} */
+
+/* footer */
+footer {
+	margin-top: 30px;
+	padding-top: 30px;
+	background-color: #f8f9fa !important;
+	border-top: 1px solid #ddd;
+	color: black !important;
 }
+footer hr {
+	border-top: none;
+	border-bottom: 1px solid #666;
+}
+footer a {
+	color: black ;
+}
+footer a:hover {
+	color: yellowgreen;
+}
+footer h5 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: black !important;
+}
+
+.btn_log:hover{
+    border: none;
+color: black;
+
+}
+.btn_log{
+   
+    color: white;
+    align-items: center;
+    font-style: oblique;
+}
+
+
+
 /* alert */
 .alert {
 	padding: 8px 14px 8px 14px;
