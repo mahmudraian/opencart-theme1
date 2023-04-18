@@ -1,9 +1,10 @@
-<h1 style="text-align:center;">Popular Items</h1>
+<div id="common-home" style="overflow:hidden;" class="container">
+<h1 style="text-align:center; margin-top: 25px;margin-bottom: 40px;">Popular Items</h1>
 
 <div class="product-list">
-  <ul class="product-items">
+  <ul class=" product-items">
     {% for product in products %}
-      <li class="product-item">
+      <li class="product-item ">
         <div class="product-item-inner">
           <div class="product-image">
             <a href="{{ product.href }}">
@@ -11,7 +12,7 @@
             </a>
           </div>
           <div class="product-details">
-            <h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+            <h5 class="product-name"><a href="{{ product.href }}"><b>{{ product.name }}</b></a></h5>
             {% if product.price %}
               <p class="product-price">
                 {% if not product.special %}
@@ -22,6 +23,15 @@
               </p>
             {% endif %}
           </div>
+
+          <span>
+             {% if product.rating %}
+                <div class="rating1"> {% for i in 1..5 %}
+                  {% if product.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>{% endif %}
+                  {% endfor %} 
+                  </div>
+                {% endif %} 
+          </span>
         </div>
       </li>
     {% endfor %}
@@ -32,6 +42,7 @@
       <button class="view-all-products-btn">View All Products</button>
     </div>
   {% endif %}
+</div>
 </div>
 
 
