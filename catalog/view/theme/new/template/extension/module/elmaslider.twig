@@ -1,0 +1,65 @@
+
+
+    .<div class="container-fluid">
+       <div class="header_btn">
+     <div class="slide_content" >
+     <h1 style="color:black;font-size: 48px;">The New Collection of <br> Summer Vacation</h1>
+      <p>My Elma mission is to provide passionate customers a dynamic, ever-<br> evolving and passionate business environment.</p>
+        <a style="background-color: black;color: white;" href="#" class="btn btn-dark">Shop now!</a>
+        <a  style="color: black;" href="#" class="btn btn-dark">Explore</a>
+     </div>
+      
+    </div>
+
+   
+    
+ </div>
+
+ <style>
+  .slide_content{
+    padding-left: 100px;
+
+  }
+
+
+  .header_btn {
+    width: 100% !important;
+    height: 430px;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-image: url("{{ base_url }}image/catalog/1.PNG");
+      /* background-image: url("{{ banner.image }}"); */
+      background-color: #e5f0f8;
+      background-position-x: right;
+  }
+  h1{
+    font-family: system-ui !important;
+    font-size: 33px;
+}
+
+p{
+    font-size: 15px;
+}
+
+
+
+ </style>
+
+
+
+<script type="text/javascript"><!--
+$('#slideshow{{ module }}').swiper({
+	mode: 'horizontal',
+	slidesPerView: 1,
+	pagination: '.slideshow{{ module }}',
+	paginationClickable: true,
+	nextButton: '.slideshow .swiper-button-next',
+    prevButton: '.slideshow .swiper-button-prev',
+    spaceBetween: 30,
+	autoplay: 2500,
+    autoplayDisableOnInteraction: true,
+	loop: true
+});
+//--></script>
