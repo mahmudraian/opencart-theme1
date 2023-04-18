@@ -1,0 +1,66 @@
+<h1 style="text-align:center;">Popular Items</h1>
+
+<div class="product-list">
+  <ul class="product-items">
+    {% for product in products %}
+      <li class="product-item">
+        <div class="product-item-inner">
+          <div class="product-image">
+            <a href="{{ product.href }}">
+              <img src="{{  product.thumb  }}" alt="{{ product.name }}">
+            </a>
+          </div>
+          <div class="product-details">
+            <h4 class="product-name"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+            {% if product.price %}
+              <p class="product-price">
+                {% if not product.special %}
+                  {{ product.price }}
+                {% else %}
+                  <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+                {% endif %}
+              </p>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if products|length > 3 %}
+    <div class="view-all-products">
+      <button class="view-all-products-btn">View All Products</button>
+    </div>
+  {% endif %}
+</div>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const viewAllProductsBtn = document.querySelector('.view-all-products-btn');
+  const productItems = document.querySelectorAll('.product-item');
+
+  if (viewAllProductsBtn && productItems) {
+    viewAllProductsBtn.addEventListener('click', function() {
+      productItems.forEach(function(item) {
+        item.style.display = 'flex';
+      });
+
+      viewAllProductsBtn.style.display = 'none';
+    });
+  }
+
+  // Hide additional products initially
+  for (let i = 3; i < productItems.length; i++) {
+    productItems[i].style.display = 'none';
+  }
+});
+
+
+</script>
+
+
+
