@@ -37,7 +37,7 @@
     {% endfor %}
   </ul>
 
-  {% if products|length > 3 %}
+  {% if products|length > 6 %}
     <div class="view-all-products">
       <button class="view-all-products-btn">View All Products</button>
     </div>
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Hide additional products initially
-  for (let i = 3; i < productItems.length; i++) {
+  for (let i = 6; i < productItems.length; i++) {
     productItems[i].style.display = 'none';
   }
 });

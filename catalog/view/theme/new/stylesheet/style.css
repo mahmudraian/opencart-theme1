@@ -290,6 +290,18 @@
     margin-left: 166px;
     font-size: 12px;
   }
+
+  .shop.swiper-viewport {
+    margin-top: 50px;
+  }
+
+  .p-des{
+   
+      overflow: hidden;
+      max-height: 40px;
+      height: auto;
+  }
+  
   
 
   
