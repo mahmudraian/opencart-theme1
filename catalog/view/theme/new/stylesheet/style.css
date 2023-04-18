@@ -120,8 +120,8 @@
     display: flex;
     flex-direction: column;
     width: calc(100% / 3);
-    padding: 0 10px;
-    margin-bottom: 20px;
+    padding: 20 30px;
+    margin-bottom: 80px;
   }
   
   .product-item-inner {
@@ -129,28 +129,26 @@
   }
   
   .product-image {
-    width: 100%;
-    padding-bottom: 100%;
-    position: relative;
-    overflow: hidden;
+  height: 170px;
+ 
   }
   
   .product-image img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+
   }
   
   .product-details {
     flex-grow: 1;
+    margin-left: 15px;
+
   }
   
   .product-name {
     margin-top: 10px;
     margin-bottom: 5px;
+    margin-left: 165px;
     font-size: 18px;
     font-weight: 500;
   }
@@ -158,11 +156,41 @@
   .product-price {
     margin: 0;
     font-size: 16px;
+    margin-left: 190px;
+    color:#002fff;
+  }
+
+  .price .price-new{
+    color:#002fff;
+  }
+
+  .rating1{
+    margin-left: 200px;
+    margin-top: 15px;
+  }
+
+  .product-thumb .rating1 {
+    padding-bottom: 10px;
+  }
+  .rating1 .fa-stack {
+    font-size: 8px;
+  }
+  .rating1 .fa-star-o {
+    color: #999;
+    font-size: 15px;
+  }
+  .rating1 .fa-star {
+    color: #FC0;
+    font-size: 15px;
+  }
+  .rating1 .fa-star + .fa-star-o {
+    color: #E69500;
   }
   
   .view-all-products {
-    text-align: center;
-    margin-top: 20px;
+ 
+    margin-top: 50px;
+
   }
   
   .view-all-products-btn {
@@ -173,4 +201,81 @@
     padding: 10px 20px;
     cursor: pointer;
   }
+
+  .shop.swiper-viewport {
+    width: 100%;
+  }
+
+ 
+
+  #slide-shop{
+    background-color: #fceae8;
+  }
+
+  
+  @media (max-width: 767px) {
+    .search{
+      margin-left: 100px;
+      margin-top: -43px;
+      bottom: -35px
+    }
+
+    #topp{
+      display: none;
+    }
+
+    #topp2{
+      margin-top: -70px;
+    }
+
+
+
+    .col-sm-5 search{
+      margin-left: 100px;
+      margin-top: -65px;
+    }
+
+    .row{
+      margin-top: -1px;margin-left: 52px;margin-bottom: -72px;
+    }
+
+    .search1{
+      padding-right: 15px;
+       padding-left: 15px;
+      margin-right: 135px;
+    }
+
+    .btn btn-navbar navbar-toggle{
+      margin-top: -60px;
+    }
+
+
+  }
+  
+  /* For screens smaller than 768px */
+  @media (max-width: 767px) {
+  .elma{
+    display: none;
+  }
+
+
+  .form-control{
+    padding-left: 95px;
+    margin-left: 60px;
+    left: -63px;
+  }
+  }
+
+
+  .product-name{
+    margin-bottom: 43px;
+    margin-top: -126px;
+    margin-left: 185px;
+  }
+
+  .product-price{
+    margin-left: 182px;margin-bottom: -5px;margin-top: -35px;
+  }
+  
+
   
