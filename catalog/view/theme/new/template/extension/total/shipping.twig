@@ -34,7 +34,7 @@
             <input type="text" name="postcode" value="{{ postcode }}" placeholder="{{ entry_postcode }}" id="input-postcode" class="form-control" />
           </div>
         </div>
-        <button type="button" id="button-quote" data-loading-text="{{ text_loading }}" class="btn btn-primary">{{ button_quote }}</button>
+        <button type="button" id="button-quote" data-loading-text="{{ text_loading }}" class="btn btn-ship">{{ button_quote }}</button>
       </div>
       <script type="text/javascript"><!--
 $('#button-quote').on('click', function() {
@@ -212,3 +212,21 @@ $('select[name=\'country_id\']').trigger('change');
     </div>
   </div>
 </div>
+
+<style>
+.btn-ship{
+    width: 100px;
+    height: 35px;
+    background-color: #43467f;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px black;
+    color:white;
+}
+
+ .btn-ship:hover {
+    background-color: yellow green;
+    color: white;
+    box-shadow: 0 0 10px black;
+}
+</style>

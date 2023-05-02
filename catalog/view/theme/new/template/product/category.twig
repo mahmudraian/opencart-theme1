@@ -28,10 +28,12 @@
       <h3>{{ text_refine }}</h3>
       {% if categories|length <= 5 %}
       <div class="row">
-        <div class="col-sm-3">
+        <div  class="col-sm-3">
           <ul>
             {% for category in categories %}
+          <ul>
             <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+           </ul>
             {% endfor %}
           </ul>
         </div>
@@ -57,9 +59,9 @@
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="{{ button_grid }}"><i class="fa fa-th"></i></button>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        {# <div class="col-md-3 col-sm-6">
           <div class="form-group"><a href="{{ compare }}" id="compare-total" class="btn btn-link">{{ text_compare }}</a></div>
-        </div>
+        </div> #}
         <div class="col-md-4 col-xs-6">
           <div class="form-group input-group input-group-sm">
             <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
@@ -96,7 +98,7 @@
             <div>
               <div class="caption">
                 <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-                <p>{{ product.description }}</p>
+                {# <p>{{ product.description }}</p> #}
                 {% if product.price %}
                 <p class="price"> {% if not product.special %}
                   {{ product.price }}
@@ -109,9 +111,9 @@
                   {% endfor %} </div>
                 {% endif %} </div>
               <div class="button-group">
-                <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
-                <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
-                <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
+                <button class="btn-pro" type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+                <button style=" background-color: #ffff; color:black;" class="btn-pro" type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
+                <button style=" background-color: wheat; color:black;" class="btn-pro" type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
               </div>
             </div>
           </div>
@@ -125,10 +127,47 @@
       {% if not categories and not products %}
       <p>{{ text_empty }}</p>
       <div class="buttons">
-        <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+        <div style="width:20%;" class="pull-right"><a href="{{ continue }}" class="btn btn-pro">{{ button_continue }}</a></div>
       </div>
       {% endif %}
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
 {{ footer }} 
+
+
+
+<style>
+
+
+.btn-pro{
+  color:white;
+  width: 80%;
+}
+.btn-pro:hover{
+  color: #F6F1E9;
+}
+
+.btn-default.active{
+  color: black;
+
+}
+
+.row {
+margin-bottom: 0px !important;
+margin-left: 10px !important;
+}
+
+@media screen and (max-width: 480px) {
+.product-thumb {
+  width: 70%;
+  display:grid;
+  grid-template-columns: 2fr 2fr !important;
+}
+.btn-pro{
+  width: 75px !important;
+}
+}
+
+</style>
+

@@ -211,9 +211,9 @@
           {% endfor %}
         </fieldset>
         <div class="buttons clearfix">
-          <div class="pull-left"><a href="{{ back }}" class="btn btn-default">{{ button_back }}</a></div>
+          <div class="pull-left"><a href="{{ back }}" class="btn btn-pro">{{ button_back }}</a></div>
           <div class="pull-right">
-            <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
+            <input type="submit" value="{{ button_continue }}" class="btn  btn-pro" />
           </div>
         </div>
       </form>
@@ -311,3 +311,64 @@ $('.time').datetimepicker({
 });
 //--></script>
 {{ footer }}
+
+
+<style>
+
+.btn-pro {
+    width: 80%;
+    height: 35px;
+    background-color: #43467f;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px;
+    color:white;
+    width: 100%;
+
+
+
+    
+}
+
+ .btn-pro:hover {
+    background-color: yellow green;
+    color: black;
+    box-shadow: 0 0 10px black;
+
+}
+
+
+.btn-white{
+    width: 120%;
+    height: 35px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px;
+    color:black;
+   
+
+
+}
+.btn-white:hover {
+  background-color: yellow green;
+    color: red;
+    box-shadow: 0 0 10px black;
+}
+
+.container{
+   flex-grow: 2;
+    background-color: white;
+    min-height: 100%;
+    padding: 0%;
+    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+
+
+
+</style>

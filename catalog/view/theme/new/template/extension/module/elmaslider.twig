@@ -18,13 +18,21 @@
  <style>
   .slide_content{
     padding-left: 100px;
-
+  overflow: hidden;
   }
+
+@media screen and (min-width: 480px) {
+  body {
+   display:50%;
+  }
+
+}
+
 
 
   .header_btn {
     width: 100% !important;
-    height: 430px;
+    height:100%;
       display: flex;
       justify-content:flex-start;
       align-items: center;
@@ -33,6 +41,7 @@
       /* background-image: url("{{ banner.image }}"); */
       background-color: #e5f0f8;
       background-position-x: right;
+
   }
   h1{
     font-family: system-ui !important;

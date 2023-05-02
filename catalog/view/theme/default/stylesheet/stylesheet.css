@@ -536,6 +536,25 @@ html[dir=rtl] .breadcrumb > li::after {
 	content: '\f054';
 	font-family: FontAwesome;
 }
+
+/* login button */
+.LoginButton {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #2e1f7a;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+}
+
+
+
+
 /* product list */
 .product-thumb {
 	border: 1px solid #ddd;

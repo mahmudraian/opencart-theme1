@@ -1,4 +1,4 @@
-<div class="categry container" >
+<div class="categry" >
 {% for category in categories %}
 
 <div>
@@ -22,6 +22,8 @@
 .categry{
   display: flex;
   padding-top: 10px;
+      justify-content: center;
+}
 }
 .cate{
   border-radius: 5px;
@@ -31,6 +33,20 @@
  .categry a{
     color: black;
     font-size: unset;
+}
+
+@media screen and (max-width: 767px) {
+  .categry{
+display:grid;
+grid-template-columns: 1fr 1fr;
+
+  }
+
+.row {
+    margin-bottom: 0;
+}
+
+
 }
 
 </style>

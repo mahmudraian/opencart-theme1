@@ -1,4 +1,5 @@
 {{ header }}
+<div class="register_page">
 <div id="account-register" class="container">
   <ul class="breadcrumb">
     {% for breadcrumb in breadcrumbs %}
@@ -8,17 +9,19 @@
   {% if error_warning %}
   <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
   {% endif %}
+  <div  class="register_form" >
   <div class="row">{{ column_left }}
     {% if column_left and column_right %}
     {% set class = 'col-sm-6' %}
     {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
+    {% set class = 'col-sm-12' %}
     {% else %}
     {% set class = 'col-sm-12' %}
     {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
-      <p>{{ text_account_already }}</p>
+
+    <div  id="content" class="{{ class }}">{{ content_top }}
+      <h1 style="text-align: center;" >{{ heading_title }}</h1>
+      <p style="text-align: center;">{{ text_account_already }}</p>
       <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
           <legend>{{ text_your_details }}</legend>
@@ -79,43 +82,14 @@
             <div class="col-sm-10">
               <select name="custom_field[{{ custom_field.location }}][{{ custom_field.custom_field_id }}]" id="input-custom-field{{ custom_field.custom_field_id }}" class="form-control">
                 <option value="">{{ text_select }}</option>
-                
-                
-                
-                
-                
-                {% for custom_field_value in custom_field.custom_field_value %}
+                 {% for custom_field_value in custom_field.custom_field_value %}
                 {% if register_custom_field[custom_field.location][custom_field.custom_field_id] and custom_field_value.custom_field_value_id == register_custom_field[custom_field.custom_field_id] %}
-                
-                
-                
-                
                 <option value="{{ custom_field_value.custom_field_value_id }}" selected="selected">{{ custom_field_value.name }}</option>
-                
-                
-                
-                
-                
-                {% else %}
-                
-                
-                
-                
-                
-                <option value="{{ custom_field_value.custom_field_value_id }}">{{ custom_field_value.name }}</option>
-                
-                
-                
-                
-                
+               {% else %}
+               <option value="{{ custom_field_value.custom_field_value_id }}">{{ custom_field_value.name }}</option>
                 {% endif %}
                 {% endfor %}
-              
-              
-              
-              
-              
-              </select>
+               </select>
               {% if error_custom_field[custom_field.custom_field_id] %}
               <div class="text-danger">{{ error_custom_field[custom_field.custom_field_id] }}</div>
               {% endif %}</div>
@@ -286,7 +260,7 @@
             <input type="checkbox" name="agree" value="1" />
             {% endif %}
             &nbsp;
-            <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
+            <input class="btn-pro" type="submit" value="{{ button_continue }}" class="btn btn-primary" />
           </div>
         </div>
         {% else %}
@@ -298,8 +272,10 @@
         {% endif %}
       </form>
       {{ content_bottom }}</div>
-    {{ column_right }}</div>
-</div>
+   
+    </div>
+  </div>
+</div></div>
 <script type="text/javascript"><!--
 // Sort the custom fields
 $('#account .form-group[data-sort]').detach().each(function() {
@@ -417,3 +393,97 @@ $('.datetime').datetimepicker({
 });
 //--></script> 
 {{ footer }} 
+
+{# style #}
+<style>
+.container{
+   flex-grow: 2;
+    background-color: white;
+    padding: 0%;
+    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+  .btn-pro {
+    width: 80%;
+    height: 35px;
+    background-color: #43467f;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px;
+    color:white;
+    width: 100%;
+
+
+
+    
+}
+
+ .btn-pro:hover {
+    background-color: yellow green;
+    color: yellow;
+    box-shadow: 0 0 10px black;
+
+}
+
+.register_form{
+  padding-left: 100px;
+    padding-right: 150px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  box-shadow: 0 0 10px black;
+   border-radius: 15px;
+   align-items: center;
+       padding-bottom: 40px;
+
+}
+
+ legend{
+    font-size: 18px;
+    padding: 7px 0px;
+    text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+.form-control {
+margin-left: 10px;
+height: 45px;
+padding-left: 0px;
+ margin-right: 25px;
+
+}
+
+.register_form{
+     padding-left: 9px;
+    padding-right: 49px;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+    border-radius: 15px;
+}
+
+.row{
+      padding-bottom: 40px;
+}
+
+
+.form-horizontal .form-group {
+ text-align: left;
+    }
+
+ 
+
+
+
+
+}
+
+
+
+</style>

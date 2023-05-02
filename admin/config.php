@@ -1,18 +1,18 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/OpencartThemeDevelopment/admin/');
-define('HTTP_CATALOG', 'http://localhost/OpencartThemeDevelopment/');
+define('HTTP_SERVER', 'http://localhost/Opencart-Theme-Development/admin/');
+define('HTTP_CATALOG', 'http://localhost/Opencart-Theme-Development/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/OpencartThemeDevelopment/admin/');
-define('HTTPS_CATALOG', 'http://localhost/OpencartThemeDevelopment/');
+define('HTTPS_SERVER', 'http://localhost/Opencart-Theme-Development/admin/');
+define('HTTPS_CATALOG', 'http://localhost/Opencart-Theme-Development/');
 
 // DIR
-define('DIR_APPLICATION', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/admin/');
-define('DIR_SYSTEM', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/system/');
-define('DIR_IMAGE', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/image/');
-define('DIR_STORAGE', 'D:/Softwares/laragon/oc_theme_dev_storage/');
-define('DIR_CATALOG', 'D:/Softwares/laragon/www/OpencartThemeDevelopment/catalog/');
+define('DIR_APPLICATION', 'H:/xx/xampp-windows-x64-7.4.33-0-VC15/xampp/htdocs/Opencart-Theme-Development/admin/');
+define('DIR_SYSTEM', 'H:/xx/xampp-windows-x64-7.4.33-0-VC15/xampp/htdocs/Opencart-Theme-Development/system/');
+define('DIR_IMAGE', 'H:/xx/xampp-windows-x64-7.4.33-0-VC15/xampp/htdocs/Opencart-Theme-Development/image/');
+define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
+define('DIR_CATALOG', 'H:/xx/xampp-windows-x64-7.4.33-0-VC15/xampp/htdocs/Opencart-Theme-Development/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
@@ -29,7 +29,7 @@ define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'opencart_theme');
-define('DB_PORT', '3306');
+define('DB_PORT', '4306');
 define('DB_PREFIX', 'oc_');
 
 // OpenCart API

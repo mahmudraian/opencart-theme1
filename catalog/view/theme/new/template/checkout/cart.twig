@@ -29,24 +29,26 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}
+      <h1 style="text-align:center;">{{ heading_title }}
         {% if weight %}
         &nbsp;({{ weight }})
         {% endif %} </h1>
       <form action="{{ action }}" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
+        
+          <table class="table table-hover">
             <thead>
               <tr>
-                <td class="text-center">{{ column_image }}</td>
-                <td class="text-left">{{ column_name }}</td>
-                <td class="text-left">{{ column_model }}</td>
-                <td class="text-left">{{ column_quantity }}</td>
-                <td class="text-right">{{ column_price }}</td>
-                <td class="text-right">{{ column_total }}</td>
+                <th class="text-center">{{ column_image }}</th>
+                <th class="text-left">{{ column_name }}</th>
+                <th class="text-left">{{ column_model }}</th>
+                <th class="text-left">{{ column_quantity }}</th>
+                <th class="text-right">{{ column_price }}</th>
+                <th class="text-right">{{ column_total }}</th>
               </tr>
             </thead>
             <tbody>
+            
             
             {% for product in products %}
             <tr>
@@ -64,12 +66,13 @@
               <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                   <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" size="1" class="form-control" />
                   <span class="input-group-btn">
-                  <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="cart.remove('{{ product.cart_id }}');"><i class="fa fa-times-circle"></i></button>
+                  <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="btn btn-update"><i class="fa fa-refresh"></i></button>
+                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-dlt" onclick="cart.remove('{{ product.cart_id }}');"><i class="fa fa-times-circle"></i></button>
                   </span></div></td>
               <td class="text-right">{{ product.price }}</td>
               <td class="text-right">{{ product.total }}</td>
             </tr>
+            <hr/>
             {% endfor %}
             {% for voucher in vouchers %}
             <tr>
@@ -79,7 +82,7 @@
               <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
                   <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
                   <span class="input-group-btn">
-                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
+                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-pro" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
                   </span></div></td>
               <td class="text-right">{{ voucher.amount }}</td>
               <td class="text-right">{{ voucher.amount }}</td>
@@ -99,21 +102,107 @@
       {% endif %} <br/>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
-          <table class="table table-bordered">
+          <table class="table table-hover">
             {% for total in totals %}
             <tr>
-              <td class="text-right"><strong>{{ total.title }}:</strong></td>
-              <td class="text-right">{{ total.text }}</td>
+              <td class="text-center"><strong>{{ total.title }}:</strong></td>
+              <td class="">{{ total.text }}</td>
             </tr>
             {% endfor %}
           </table>
         </div>
       </div>
       <div class="buttons clearfix">
-        <div class="pull-left"><a href="{{ continue }}" class="btn btn-default">{{ button_shopping }}</a></div>
-        <div class="pull-right"><a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a></div>
+        <div class="pull-left"><a href="{{ continue }}" class="btn btn-remove">{{ button_shopping }}</a></div>
+        <div class="pull-right"><a href="{{ checkout }}" class="btn  btn-pro">{{ button_checkout }}</a></div>
       </div>
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
 {{ footer }} 
+
+<style>
+.container{
+   flex-grow: 2;
+    background-color: white;
+    min-height: 100%;
+    padding: 0%;
+    background: url(https://i.imgur.com/BKyjjFa.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+
+
+.btn-pro {
+    width: 80%;
+    height: 35px;
+    background-color: #43467f;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px black;
+    color:white;
+    width: 100%;
+     
+}
+
+ .btn-pro:hover {
+    background-color: yellow green;
+    color: black;
+    box-shadow: 0 0 10px black;
+}
+
+.btn-remove {
+    width: 80%;
+    height: 35px;
+    background-color: #ffe4e1;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px;
+    color:black;
+    width: 100%;
+
+
+
+    
+}
+
+ .btn-remove:hover {
+    background-color: yellow green;
+    color: black;
+    box-shadow: 0 0 10px black;
+}
+
+.table-bordered{
+  border: 1px solid black;
+
+}
+
+.btn-update{
+  background-color: #4D4D4D;
+  color: white;
+}
+.btn-dlt{
+  background-color: #9E6F21;
+  color: black;
+}
+
+@media screen and (max-width: 767px){
+
+  .row{
+  margin-bottom: 0px !important;
+  }
+
+
+/* table>tbody>tr>td{
+
+  display: contents;
+} */
+
+}
+
+
+</style>

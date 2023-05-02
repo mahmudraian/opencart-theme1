@@ -13,6 +13,7 @@
     {% else %}
     {% set class = 'col-sm-12' %}
     {% endif %}
+    <div  style="text-align: center;"class="address_page">
     <div id="content" class="{{ class }}">{{ content_top }}
       <h2>{{ text_address }}</h2>
       <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -272,12 +273,14 @@
           </div>
         </fieldset>
         <div class="buttons clearfix">
-          <div class="pull-left"><a href="{{ back }}" class="btn btn-default">{{ button_back }}</a></div>
+          {# <div class="pull-left"><a  class="btn-white" href="{{ back }}" class="btn btn-default">{{ button_back }}</a></div> #}
+          <div class="pull-left"> <input class="btn-white" type="submit" value="{{ button_back }}" class="btn btn-primary" /></div>
           <div class="pull-right">
-            <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
+            <input class="btn-pro" type="submit" value="{{ button_continue }}" class="btn btn-primary" />
           </div>
         </div>
       </form>
+    </div>
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
@@ -416,3 +419,56 @@ $('select[name=\'country_id\']').on('change', function() {
 $('select[name=\'country_id\']').trigger('change');
 //--></script> 
 {{ footer }}
+
+
+<style>
+.address_page{
+    padding-left: 100px;
+    padding-right: 150px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  box-shadow: 0 0 10px black;
+   border-radius: 15px;
+   align-items: center;
+
+}
+
+.btn-pro {
+    width: 80%;
+    height: 35px;
+    background-color: #43467f;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px;
+    color:white;
+    width: 100%;
+
+
+
+    
+}
+
+ .btn-pro:hover {
+    background-color: yellow green;
+    color: yellow;
+    box-shadow: 0 0 10px black;
+
+}
+
+
+.btn-white{
+    width: 120%;
+    height: 35px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px;
+    color:black;
+    }
+.btn-white:hover {
+  background-color: yellow green;
+    color: red;
+    box-shadow: 0 0 10px black;
+}
+
+</style>

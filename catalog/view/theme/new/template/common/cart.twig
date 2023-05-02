@@ -11,7 +11,7 @@
   <ul class="dropdown-menu pull-right">
     {% if products or vouchers %}
     <li>
-      <table class="table table-striped">
+      <table class="table table-striped table-hover">
         {% for product in products %}
         <tr>
           <td class="text-center">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}</td>
@@ -23,7 +23,7 @@
             - <small>{{ text_recurring }} {{ product.recurring }}</small> {% endif %}</td>
           <td class="text-right">x {{ product.quantity }}</td>
           <td class="text-right">{{ product.total }}</td>
-          <td class="text-center"><button type="button" onclick="cart.remove('{{ product.cart_id }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
+          <td class="text-center"><button type="button" onclick="cart.remove('{{ product.cart_id }}');" title="{{ button_remove }}" class="btn btn-cart btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
         {% endfor %}
         {% for voucher in vouchers %}
@@ -35,11 +35,13 @@
           <td class="text-center text-danger"><button type="button" onclick="voucher.remove('{{ voucher.key }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
         </tr>
         {% endfor %}
+
+
       </table>
     </li>
     <li>
       <div>
-        <table class="table table-bordered">
+        <table class="table table-hover">
           {% for total in totals %}
           <tr>
             <td class="text-right"><strong>{{ total.title }}</strong></td>
@@ -57,3 +59,31 @@
     {% endif %}
   </ul>
 </div>
+
+<style>
+.btn-cart {
+    width: 10%;
+    height: 35px;
+    background-color:#F9F5E7;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px black;
+    color:black;
+    width: 100%;
+     
+}
+
+ .btn-cart:hover {
+    background-color: yellow green;
+    color: red;
+    box-shadow: 0 0 2px;
+}
+
+#cart a:hover {
+    color: black !important;
+}
+
+
+}
+
+</style>
