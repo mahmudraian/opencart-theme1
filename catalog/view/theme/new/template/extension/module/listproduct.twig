@@ -1,8 +1,7 @@
 <div id="common-home" style="overflow:hidden;" class="container">
 <h1 style="text-align:center; margin-top: 25px;margin-bottom: 40px;">Product List - Popular Items</h1>
-
 <div class="product-list">
-  <ul class=" product-items">
+  <ul class="product-items">
     {% for product in products %}
       <li class="product-item ">
         <div class="product-item-inner">
@@ -23,20 +22,18 @@
               </p>
             {% endif %}
           </div>
-
           <span>
              {% if product.rating %}
                 <div class="rating1"> {% for i in 1..5 %}
                   {% if product.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>{% endif %}
-                  {% endfor %} 
+                  {% endfor %}
                   </div>
-                {% endif %} 
+                {% endif %}
           </span>
         </div>
       </li>
     {% endfor %}
   </ul>
-
   {% if products|length > 6 %}
     <div class="view-all-products">
       <button class="view-all-products-btn">View All Products</button>
@@ -44,34 +41,59 @@
   {% endif %}
 </div>
 </div>
-
-
-
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const viewAllProductsBtn = document.querySelector('.view-all-products-btn');
   const productItems = document.querySelectorAll('.product-item');
-
   if (viewAllProductsBtn && productItems) {
     viewAllProductsBtn.addEventListener('click', function() {
       productItems.forEach(function(item) {
         item.style.display = 'flex';
       });
-
       viewAllProductsBtn.style.display = 'none';
     });
   }
-
   // Hide additional products initially
   for (let i = 6; i < productItems.length; i++) {
     productItems[i].style.display = 'none';
   }
 });
-
-
 </script>
+
+
+
+
+
+
+
+<style>
+@media screen and (max-width: 1200px) {
+.product-items{
+display:grid;
+grid-template-columns: 2fr 2fr;
+
+}
+.rating1{
+display:inline-flex;
+
+}
+}
+@media screen and (max-width: 700px) {
+.product-items{
+display:grid;
+grid-template-columns: 1fr;
+
+}
+.rating1{
+display:inline-flex;
+
+}
+}
+
+
+
+
+</style>
 
 
 
