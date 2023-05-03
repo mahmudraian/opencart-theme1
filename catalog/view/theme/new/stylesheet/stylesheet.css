@@ -437,13 +437,15 @@ html[dir=rtl] .breadcrumb > li::after {
 /* NEW breadcrumb */
 
 .breadcrumb {
-	list-style: none;
+	/* list-style: none; */
 	display: flex;
 	gap: 0.75rem;
 	background: #fce4ec;
 	padding: 0.75rem;
 	border-radius: 0.5rem;
 	box-shadow: 0 0 20px #fce4ec;
+	margin: 0 0 20px 0;
+	padding: 8px 0;
   }
   
   .breadcrumb > li {
@@ -465,6 +467,7 @@ html[dir=rtl] .breadcrumb > li::after {
 	top: 0;
 	left: 0;
 	clip-path: polygon(0 0, 100% 50%, 0 100%);
+	
   }
   
   .breadcrumb > li::before {
@@ -668,7 +671,7 @@ padding: 5px;
 /* border: 1px solid black; */
 	border-radius: 10px;
 	margin-bottom: 20px;
-	overflow: auto;
+	overflow: hidden;
 	box-shadow: 0 0 5px;
 }
 .product-thumb .image {
@@ -771,7 +774,7 @@ h2.price {
 	border-top: 1px solid #ddd;
 	/* background-color: #eee; */
 	overflow: hidden;
-	display: block;
+	display: contents;
 	margin-left: 25px;
 }
 .product-list .product-thumb .button-group {

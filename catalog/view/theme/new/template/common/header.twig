@@ -69,12 +69,14 @@
           <h1><a href="{{ home }}">{{ name }}</a></h1>
           {% endif %}</div>
       </div>
-      <div class="col-sm-5 search" style="padding-left: 50px;">{{ search }}</div>
+      <div class="col-sm-5 search" >
+      {{ search }}
+      </div>
       </div>
 
       <div id="top-links" class="nav pull-right">
       <ul class="list-inline" style="margin-top: -50px;">
-        <li> {{ cart }}</li>
+       <li> {{ cart }}</li>
        <li><a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}"><i class="fa fa-heart"></i> </a></li>
        
         <li><a href="{{ home }}"<span class="menu-item-2"><img class="menu-item-2" src="{{ base_url }}image/theme/message.PNG"></span></a></li> 
